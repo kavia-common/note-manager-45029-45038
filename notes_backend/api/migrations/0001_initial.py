@@ -3,21 +3,26 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+    """
+    Initial migration to create the Note model.
+
+    Ensures proper use of Django's migration operations (CreateModel).
+    """
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
-        migrations.create_model(
-            name='Note',
+        migrations.CreateModel(
+            name="Note",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=255)),
-                ('content', models.TextField(blank=True, default='')),
-                ('created_at', models.DateTimeField(auto_now_add=True, db_index=True)),
-                ('updated_at', models.DateTimeField(auto_now=True, db_index=True)),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("title", models.CharField(max_length=255)),
+                ("content", models.TextField(blank=True, default="")),
+                ("created_at", models.DateTimeField(auto_now_add=True, db_index=True)),
+                ("updated_at", models.DateTimeField(auto_now=True, db_index=True)),
             ],
+            options={},
         ),
     ]
